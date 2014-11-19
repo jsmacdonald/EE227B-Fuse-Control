@@ -1,0 +1,129 @@
+\documentclass[letter,12pt]{article}
+
+\newif\ifpdf
+\ifx\pdfoutput\undefined
+	\pdffalse              %%normal LaTeX is executed
+\else
+	\pdfoutput=1           
+	\pdftrue               %%pdfLaTeX is executed
+\fi
+
+
+\usepackage[T1]{fontenc}
+\usepackage[latin1]{inputenc}
+\usepackage[spanish]{babel}
+\decimalpoint
+\usepackage{amsfonts}
+\usepackage{latexsym}
+\usepackage{amsmath,amsfonts,amssymb}
+
+
+
+
+
+
+%% Packages for Graphics & Figures %%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifpdf %%Inclusion of graphics via \includegraphics{file}
+	\usepackage[pdftex]{graphicx} %%graphics in pdfLaTeX
+\else
+	\usepackage[dvips]{graphicx} %%graphics and normal LaTeX
+\fi
+
+
+%%%
+\makeatletter
+\@addtoreset{section}{part}
+\def\@part[#1]#2{%
+    \ifnum \c@secnumdepth >\m@ne
+      \refstepcounter{part}%
+      \addcontentsline{toc}{part}{\thepart\hspace{1em}#1}%
+    \else
+      \addcontentsline{toc}{part}{#1}%
+    \fi
+    {\parindent \z@ \raggedright
+     \interlinepenalty \@M
+     \normalfont\centering
+     \ifnum \c@secnumdepth >\m@ne
+   %    \LARGE\bfseries \partname\nobreakspace\thepart
+   %    \par\nobreak
+     \fi
+     \huge \bfseries #2%
+     \markboth{}{}\par}%
+    \nobreak
+   % \vskip 3ex
+     \@afterheading}
+\renewcommand\partname{Topic}
+\makeatother
+
+%%%
+
+
+
+
+
+
+\begin{document}
+
+\part{}
+
+{\parindent 0pt \begin{tabular}[t]{l}
+EE 227BT \\
+\end{tabular}  \hfill November 18th, 2014 \vskip 0.2in }
+
+\parindent 0pt
+\parskip 8pt
+
+
+\begin{center}
+\small\bf \LARGE Project Midpoint review: Fuse Control for Demand Side Management\\
+\smallskip
+\small \textnormal{Clay Campaigne, Jason MacDonald, and Patricia Hidalgo-Gonzalez}\\
+\end{center}
+
+\bigskip
+
+\section{Progress description and future work}
+
+The progress that we have achieved has been focused on the following areas:
+\begin{itemize}
+\item Literature review about alternative methodologies to solve the research question.
+\item Reproduction of the formulas using the merit order controller / dispatch algorithm used in Margellos (2014) \footnote{Paper we discuss and propose extensions as our project.}.
+\item Prove optimality of merit order.
+\item Writing of the formula for the marginal value of fuse capacity using the merit order controller.
+\end{itemize}
+
+Future work:
+\begin{itemize}
+\item Run the model used in Margellos (2014).
+\item Propose new quadratic cost functions.
+\item Compare algorithms and discuss.
+\end{itemize}
+We also attach the outline of our report and what we have already included in it as of today.
+
+\newpage
+
+\part{}
+\begin{center}
+\small\bf \LARGE Fuse Control for Demand Side Management\\
+\smallskip
+\small \textnormal{Clay Campaigne, Jason MacDonald, and Patricia Hidalgo-Gonzalez}\\
+\end{center}
+
+\bigskip
+
+\section{Abstract}
+
+\section{Introduction}
+
+\section{Methodology}
+
+\section{Results and discussion}
+
+\section{Conclusions}
+
+\section{References}
+
+
+
+
+\end{document}
